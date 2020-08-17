@@ -3,6 +3,7 @@ import './App.css';
 import FormField from './components/FormField';
 import Button from './components/Button';
 import useForm from './hooks/useForm';
+import getVersesFrom from './service/lyrics.js';
 
 function App() {
   const valoresIniciais = {
@@ -31,6 +32,19 @@ function App() {
           Cadastrar
         </Button>
       </form>
+
+      {valores.length === 0 && (
+      <div>
+        {/* Cargando ... */ }
+        Loading...
+      </div>
+      )}
+
+      <div>
+        <p>
+          {getVersesFrom(valores.garrafas)}
+        </p>
+      </div>
 
     </div>
   );

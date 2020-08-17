@@ -1,4 +1,4 @@
-export const getVersesFrom = (bottle) => {
+function GetVersesFrom(bottle) {
   let initialVerse = '';
   let index;
 
@@ -26,3 +26,5 @@ const buildVerse = (bottle) => {
 const container = (numberOfBootles) => {
   return numberOfBootles === 1 ? 'bottle' : 'bottles';
 }
+
+export default GetVersesFrom;
