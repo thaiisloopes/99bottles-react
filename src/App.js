@@ -6,9 +6,7 @@ import useForm from './hooks/useForm';
 
 function App() {
   const valoresIniciais = {
-    nome: '',
-    descricao: '',
-    cor: '',
+    garrafas: ''
   };
 
   const { valores, funcaoHandler } = useForm(valoresIniciais);
@@ -23,8 +21,8 @@ function App() {
         <FormField
           label="Número de garrafas"
           type="text"
-          name="titulo"
-          value={valores.titulo}
+          name="garrafas"
+          value={valores.garrafas}
           onChange={funcaoHandler}
         />
 
