@@ -1,7 +1,6 @@
 import React from 'react';
 import './App.css';
 import FormField from './components/FormField';
-import Button from './components/Button';
 import useForm from './hooks/useForm';
 import getVersesFrom from './service/lyrics.js';
 
@@ -27,25 +26,11 @@ function App() {
           value={valores.garrafas}
           onChange={funcaoHandler}
         />
-
-        <Button>
-          Cadastrar
-        </Button>
       </form>
 
-      {valores.length === 0 && (
-      <div>
-        {/* Cargando ... */ }
-        Loading...
+      <div className="response">
+        {getVersesFrom(valores.garrafas)}
       </div>
-      )}
-
-      <div>
-        <p>
-          {getVersesFrom(valores.garrafas)}
-        </p>
-      </div>
-
     </div>
   );
 }
