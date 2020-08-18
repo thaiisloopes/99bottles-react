@@ -20,11 +20,12 @@ function App() {
         <header className="App-header">
           <h1>99 bottles song</h1>  
           <h3>99 bottles of beer</h3>
+          <h6>Number of bottles must be between 1 and 99 </h6>
         </header>
 
         <form>
           <FormField
-            label="Número de garrafas"
+            label="Number of bottles"
             type="number"
             name="garrafas"
             value={valores.garrafas}
