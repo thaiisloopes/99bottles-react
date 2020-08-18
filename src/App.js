@@ -10,7 +10,8 @@ function App() {
   };
 
   const { valores, funcaoHandler } = useForm(valoresIniciais);
-  const temGarrafas = Boolean(valores.garrafas)
+  const temGarrafas = Boolean(valores.garrafas);
+  const maisQueZeroGarrafas = Boolean(valores.garrafas > 0);
 
   return (
     <div className="Container">
@@ -32,7 +33,7 @@ function App() {
       </div>
 
       {
-        temGarrafas && (
+        temGarrafas && maisQueZeroGarrafas && (
           <div className="Response">
             {getVersesFrom(valores.garrafas)}
           </div>
