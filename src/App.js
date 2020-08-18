@@ -5,14 +5,14 @@ import useForm from './hooks/useForm';
 import getVersesFrom from './service/lyrics.js';
 
 function App() {
-  const valoresIniciais = {
-    garrafas: ''
+  const initialValues = {
+    bottles: ''
   };
 
-  const { valores, funcaoHandler } = useForm(valoresIniciais);
-  const temGarrafas = Boolean(valores.garrafas);
-  const maisQueZeroGarrafas = Boolean(valores.garrafas > 0);
-  const menosQue100Garrafas = Boolean(valores.garrafas < 100);
+  const { values, handlerFunction } = useForm(initialValues);
+  const hasBottles = Boolean(values.bottles);
+  const moreThan0Bottles = Boolean(values.bottles > 0);
+  const lessThan100Bottles = Boolean(values.bottles < 100);
 
   return (
     <div className="Container">
@@ -27,17 +27,17 @@ function App() {
           <FormField
             label="Number of bottles"
             type="number"
-            name="garrafas"
-            value={valores.garrafas}
-            onChange={funcaoHandler}
+            name="bottles"
+            value={values.bottles}
+            onChange={handlerFunction}
           />
         </form>
       </div>
 
       {
-        temGarrafas && maisQueZeroGarrafas && menosQue100Garrafas && (
+        hasBottles && moreThan0Bottles && lessThan100Bottles && (
           <div className="Response">
-            {getVersesFrom(valores.garrafas)}
+            {getVersesFrom(values.bottles)}
           </div>
         )
       }
