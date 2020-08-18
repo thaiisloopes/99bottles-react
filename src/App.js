@@ -12,23 +12,25 @@ function App() {
   const { valores, funcaoHandler } = useForm(valoresIniciais);
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>99 bottles song</h1>  
-        <h3>99 bottles of beer</h3>
-      </header>
+    <div className="Container">
+      <div className="App">
+        <header className="App-header">
+          <h1>99 bottles song</h1>  
+          <h3>99 bottles of beer</h3>
+        </header>
 
-      <form>
-        <FormField
-          label="Número de garrafas"
-          type="text"
-          name="garrafas"
-          value={valores.garrafas}
-          onChange={funcaoHandler}
-        />
-      </form>
+        <form>
+          <FormField
+            label="Número de garrafas"
+            type="text"
+            name="garrafas"
+            value={valores.garrafas}
+            onChange={funcaoHandler}
+          />
+        </form>
+      </div>
 
-      <div className="response">
+      <div className="Response">
         {getVersesFrom(valores.garrafas)}
       </div>
     </div>
