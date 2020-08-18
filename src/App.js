@@ -25,7 +25,7 @@ function App() {
         <form>
           <FormField
             label="Número de garrafas"
-            type="text"
+            type="number"
             name="garrafas"
             value={valores.garrafas}
             onChange={funcaoHandler}
