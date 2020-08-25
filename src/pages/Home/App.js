@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import FormField from '../../components/FormField';
 import useForm from '../../hooks/useForm';
-import getVersesFrom from '../../service/lyrics.js';
+import {getVersesFrom} from '../../service/lyrics.js';
 
 function App() {
   const initialValues = {
