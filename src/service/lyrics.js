@@ -15,13 +15,21 @@ const buildVerse = (bottle) => {
         'Go to the store and buy some more, 99 bottles of beer on the wall.';
     case 1: 
       return bottle + ' ' + container(bottle) + ' of beer on the wall, ' + bottle + ' ' + container(bottle) + ' of beer.\n' +
-        'Take one down and pass it around, no more bottles of beer on the wall.\n\n';   
+      'Take ' + pronoun(bottle) + ' down and pass it around, no more bottles of beer on the wall.\n\n';   
     default:
       return bottle + ' ' + container(bottle) + ' of beer on the wall, ' + bottle + ' ' + container(bottle) + ' of beer.\n' + 
-        'Take one down and pass it around, ' + (bottle - 1) + ' ' + container(bottle - 1) + ' of beer on the wall.\n\n';
+        'Take ' + pronoun(bottle) + ' down and pass it around, ' + (bottle - 1) + ' ' + container(bottle - 1) + ' of beer on the wall.\n\n';
   }
 }
 
-const container = (numberOfBootles) => {
-  return numberOfBootles === 1 ? 'bottle' : 'bottles';
+const container = (numberOfBottles) => {
+  return numberOfBottles === 1 ? 'bottle' : 'bottles';
+}
+
+const pronoun = (numberOfBottles) => {
+  if(numberOfBottles === 1) {
+    return "it";
+  }
+
+  return "one";
 }

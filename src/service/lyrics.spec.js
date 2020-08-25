@@ -23,7 +23,7 @@ test('Return 2 verse', () => {
 
 test('Return 1 verse', () => {
   const expectedVerse = '1 bottle of beer on the wall, 1 bottle of beer.\n' +
-    'Take one down and pass it around, no more bottles of beer on the wall.';
+    'Take it down and pass it around, no more bottles of beer on the wall.';
 
   expect(getVersesFrom(1)).toContain(expectedVerse);
 });
@@ -43,7 +43,7 @@ test('Return all required verses', () => {
     '2 bottles of beer on the wall, 2 bottles of beer.\n' +
     'Take one down and pass it around, 1 bottle of beer on the wall.\n\n' +
     '1 bottle of beer on the wall, 1 bottle of beer.\n' +
-    'Take one down and pass it around, no more bottles of beer on the wall.\n\n' +
+    'Take it down and pass it around, no more bottles of beer on the wall.\n\n' +
     'No more bottles of beer on the wall, no more bottles of beer.\n' +
     'Go to the store and buy some more, 99 bottles of beer on the wall.';
 
