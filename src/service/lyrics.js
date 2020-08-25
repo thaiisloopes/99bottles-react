@@ -19,12 +19,12 @@ const buildVerse = (bottle) => {
       return bottle + ' ' + container(bottle) + ' of beer on the wall, ' + 
         bottle + ' ' + container(bottle) + ' of beer.\n' +
         'Take ' + pronoun(bottle) + ' down and pass it around, ' + 
-        'no more ' + container(bottle - 1) + ' of beer on the wall.\n\n';  
+        quantity(bottle - 1) + ' ' + container(bottle - 1) + ' of beer on the wall.\n\n';  
     default:
       return bottle + ' ' + container(bottle) + ' of beer on the wall, ' + 
         bottle + ' ' + container(bottle) + ' of beer.\n' + 
         'Take ' + pronoun(bottle) + ' down and pass it around, ' + 
-        (bottle - 1) + ' ' + container(bottle - 1) + ' of beer on the wall.\n\n';
+        quantity(bottle - 1) + ' ' + container(bottle - 1) + ' of beer on the wall.\n\n';
   }
 }
 
@@ -34,4 +34,8 @@ const container = (numberOfBottles) => {
 
 const pronoun = (numberOfBottles) => {
   return numberOfBottles === 1 ? 'it' : 'one';
+}
+
+const quantity = (numberOfBottles) => {
+  return numberOfBottles === 0 ? 'no more' : numberOfBottles;
 }
