@@ -11,7 +11,7 @@ function App() {
 
   const { values, handlerFunction } = useForm(initialValues);
   const hasBottles = Boolean(values.bottles);
-  const moreThan0Bottles = Boolean(values.bottles > 0);
+  const zeroOrMoreBottles = Boolean(values.bottles >= 0);
   const lessThan100Bottles = Boolean(values.bottles < 100);
 
   return (
@@ -35,7 +35,7 @@ function App() {
       </div>
 
       {
-        hasBottles && moreThan0Bottles && lessThan100Bottles && (
+        hasBottles && zeroOrMoreBottles && lessThan100Bottles && (
           <div className="Response">
             {getVersesFrom(values.bottles)}
           </div>

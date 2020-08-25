@@ -14,7 +14,7 @@ const buildVerse = (bottle) => {
       return 'No more bottles of beer on the wall, no more bottles of beer.\n' +
         'Go to the store and buy some more, 99 bottles of beer on the wall.';
     case 1: 
-      return '1 bottle of beer on the wall, 1 bottle of beer.\n' +
+      return bottle + ' bottle of beer on the wall, ' + bottle + ' bottle of beer.\n' +
         'Take one down and pass it around, no more bottles of beer on the wall.\n\n';   
     default:
       return bottle + ' bottles of beer on the wall, ' + bottle + ' bottles of beer.\n' + 
