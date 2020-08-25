@@ -27,9 +27,5 @@ const container = (numberOfBottles) => {
 }
 
 const pronoun = (numberOfBottles) => {
-  if(numberOfBottles === 1) {
-    return "it";
-  }
-
-  return "one";
+  return numberOfBottles === 1 ? 'it' : 'one';
 }
