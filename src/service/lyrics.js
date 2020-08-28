@@ -13,13 +13,13 @@ const buildVerse = (bottle) => {
     return capitalize(quantity(bottle)) + ' ' + container(bottle) + ' of beer on the wall, ' +
     quantity(bottle) + ' ' + container(bottle) + ' of beer.\n' + 
     action(bottle) +
-    '99 bottles of beer on the wall.';
+    quantity(successor(bottle)) + ' ' + container(bottle - 1) + ' of beer on the wall.';
   }
       
   return capitalize(quantity(bottle)) + ' ' + container(bottle) + ' of beer on the wall, ' + 
     quantity(bottle) + ' ' + container(bottle) + ' of beer.\n' + 
     action(bottle) + 
-    quantity(bottle - 1) + ' ' + container(bottle - 1) + ' of beer on the wall.\n\n';
+    quantity(successor(bottle)) + ' ' + container(bottle - 1) + ' of beer on the wall.\n\n';
 }
 
 const container = (numberOfBottles) => {
@@ -39,9 +39,11 @@ const capitalize = (stringToCapitalize) => {
 }
 
 const action = (numberOfBottles) => {
-  if(numberOfBottles === 0) {
-    return 'Go to the store and buy some more, ';
-  }
+  return numberOfBottles === 0 ?
+    'Go to the store and buy some more, ' :
+    'Take ' + pronoun(numberOfBottles) + ' down and pass it around, ';
+}
 
-  return 'Take ' + pronoun(numberOfBottles) + ' down and pass it around, ';
+const successor = (numberOfBottles) => {
+  return numberOfBottles === 0 ? 99 : numberOfBottles - 1;
 }
