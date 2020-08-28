@@ -8,18 +8,11 @@ export const getVersesFrom = (bottle) => {
 
   return initialVerse;
 };
-const buildVerse = (bottle) => {
-  if(bottle === 0) {
-    return capitalize(quantity(bottle)) + ' ' + container(bottle) + ' of beer on the wall, ' +
-    quantity(bottle) + ' ' + container(bottle) + ' of beer.\n' + 
-    action(bottle) +
-    quantity(successor(bottle)) + ' ' + container(bottle - 1) + ' of beer on the wall.';
-  }
-      
+const buildVerse = (bottle) => {      
   return capitalize(quantity(bottle)) + ' ' + container(bottle) + ' of beer on the wall, ' + 
     quantity(bottle) + ' ' + container(bottle) + ' of beer.\n' + 
     action(bottle) + 
-    quantity(successor(bottle)) + ' ' + container(bottle - 1) + ' of beer on the wall.\n\n';
+    quantity(successor(bottle)) + ' ' + container(successor(bottle)) + ' of beer on the wall.\n';
 }
 
 const container = (numberOfBottles) => {
