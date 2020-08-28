@@ -11,13 +11,13 @@ export const getVersesFrom = (bottle) => {
 const buildVerse = (bottle) => {
   if(bottle === 0) {
     return capitalize(quantity(bottle)) + ' ' + container(bottle) + ' of beer on the wall, ' +
-    'no more bottles of beer.\n' +
+    quantity(bottle) + ' ' + container(bottle) + ' of beer.\n' + 
     'Go to the store and buy some more, ' +
     '99 bottles of beer on the wall.';
   }
       
   return capitalize(quantity(bottle)) + ' ' + container(bottle) + ' of beer on the wall, ' + 
-    bottle + ' ' + container(bottle) + ' of beer.\n' + 
+    quantity(bottle) + ' ' + container(bottle) + ' of beer.\n' + 
     'Take ' + pronoun(bottle) + ' down and pass it around, ' + 
     quantity(bottle - 1) + ' ' + container(bottle - 1) + ' of beer on the wall.\n\n';
 }
