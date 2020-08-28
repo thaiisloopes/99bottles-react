@@ -12,13 +12,13 @@ const buildVerse = (bottle) => {
   if(bottle === 0) {
     return capitalize(quantity(bottle)) + ' ' + container(bottle) + ' of beer on the wall, ' +
     quantity(bottle) + ' ' + container(bottle) + ' of beer.\n' + 
-    'Go to the store and buy some more, ' +
+    action(bottle) +
     '99 bottles of beer on the wall.';
   }
       
   return capitalize(quantity(bottle)) + ' ' + container(bottle) + ' of beer on the wall, ' + 
     quantity(bottle) + ' ' + container(bottle) + ' of beer.\n' + 
-    'Take ' + pronoun(bottle) + ' down and pass it around, ' + 
+    action(bottle) + 
     quantity(bottle - 1) + ' ' + container(bottle - 1) + ' of beer on the wall.\n\n';
 }
 
@@ -33,7 +33,15 @@ const pronoun = (numberOfBottles) => {
 const quantity = (numberOfBottles) => {
   return numberOfBottles === 0 ? 'no more' : numberOfBottles.toString();
 }
-const capitalize = (s) => {
-  if (typeof s !== 'string') return ''
-  return s.charAt(0).toUpperCase() + s.slice(1)
+const capitalize = (stringToCapitalize) => {
+  if (typeof stringToCapitalize !== 'string') return ''
+  return stringToCapitalize.charAt(0).toUpperCase() + stringToCapitalize.slice(1)
+}
+
+const action = (numberOfBottles) => {
+  if(numberOfBottles === 0) {
+    return 'Go to the store and buy some more, ';
+  }
+
+  return 'Take ' + pronoun(numberOfBottles) + ' down and pass it around, ';
 }
